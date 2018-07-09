@@ -145,14 +145,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CANRadarStruct.h" />
-    <ClInclude Include="drivers\common\byte.h" />
+    <ClInclude Include="drivers\CANRadarStruct.h" />
+    <ClInclude Include="drivers\ConstVars.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CANAnalysis.cpp" />
-    <ClCompile Include="drivers\common\byte.cc" />
+    <ClCompile Include="drivers\CANRadarStruct.cpp" />
+    <ClCompile Include="drivers\ConstVars.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

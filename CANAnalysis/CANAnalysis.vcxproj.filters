@@ -24,10 +24,10 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="CANRadarStruct.h">
+    <ClInclude Include="drivers\CANRadarStruct.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="drivers\common\byte.h">
+    <ClInclude Include="drivers\ConstVars.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,7 +38,10 @@
     <ClCompile Include="CANAnalysis.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="drivers\common\byte.cc">
+    <ClCompile Include="drivers\ConstVars.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\CANRadarStruct.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
