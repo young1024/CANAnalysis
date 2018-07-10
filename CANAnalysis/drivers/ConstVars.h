@@ -3,6 +3,7 @@
 #define _CONSTVARS_H_
 
 #include "CANRadarStruct.h"
+#include <math.h>
 
 const int CONTIID_START = 0x600;
 const int CONTIID_END = 0x702;
@@ -12,10 +13,6 @@ const int WAIT_TIME = 4000;
 const int RADAR_CONFIG = 0x200;
 const int RADAR_STATE = 0x201;
 
-//const int CAN_BUFFER_NUM = 20;
-//const int CANBYTE = 13;
-//const int ETHER_WAIT = 5000000;
-//const int DISCONNECT_WAIT = 5;
 
 // cluster quality
 

@@ -6,7 +6,7 @@ void StuctValueTransform60B(CANRadarMessage60B &RadarMessage60B)
 	RadarMessage60B.Object_DistLat = RadarMessage60B.Object_DistLat * OBJECT_DIST_RES + OBJECT_DIST_LAT_MIN;
 	RadarMessage60B.Object_VrelLong = RadarMessage60B.Object_VrelLong * OBJECT_VREL_RES + OBJECT_VREL_LONG_MIN;
 	RadarMessage60B.Object_VrelLat = RadarMessage60B.Object_VrelLat * OBJECT_VREL_RES + OBJECT_VREL_LAT_MIN;
-	RadarMessage60B.Object_RCS = RadarMessage60B.Object_RCS * CLUSTER_RCS_RES + CLUSTER_RCS;
+	RadarMessage60B.Object_RCS = pow(10, RadarMessage60B.Object_RCS * CLUSTER_RCS_RES + CLUSTER_RCS); // 由于求解出的单位为dbsm，需转换成平方米
 }
 
 void StuctValueTransform60C(CANRadarMessage60C &RadarMessage60C)

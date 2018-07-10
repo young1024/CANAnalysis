@@ -103,13 +103,13 @@ void StuctData2StuctValue60B(CANRadarMessage RadarMessage, CANRadarMessage60B &R
 	RadarMessageOut.Object_ID = RadarMessage.cFrameData[0];
 	wb.b[0] = RadarMessage.cFrameData[2];
 	wb.b[1] = RadarMessage.cFrameData[1];
-	RadarMessageOut.Object_DistLong = wb.w >> 3;
+	RadarMessageOut.Object_DistLong = (wb.w >> 3) & 0x1FFF;
 	wb.b[0] = RadarMessage.cFrameData[3];
 	wb.b[1] = RadarMessage.cFrameData[2];
 	RadarMessageOut.Object_DistLat = wb.w & 0x07FF;
 	wb.b[0] = RadarMessage.cFrameData[5];
 	wb.b[1] = RadarMessage.cFrameData[4];
-	RadarMessageOut.Object_VrelLong = wb.w >> 6;
+	RadarMessageOut.Object_VrelLong = (wb.w >> 6) & 0x03FF;
 	wb.b[0] = RadarMessage.cFrameData[6];
 	wb.b[1] = RadarMessage.cFrameData[5];
 	RadarMessageOut.Object_VrelLat = (wb.w >> 5) & 0x01FF;
@@ -150,14 +150,14 @@ void StuctData2StuctValue60D(CANRadarMessage RadarMessage, CANRadarMessage60D &R
 	RadarMessageOut.Object_ID = RadarMessage.cFrameData[0];
 	wb.b[0] = RadarMessage.cFrameData[2];
 	wb.b[1] = RadarMessage.cFrameData[1];
-	RadarMessageOut.Object_ArelLong = (wb.w >> 5) & 0x7F;
+	RadarMessageOut.Object_ArelLong = (wb.w >> 5) & 0x07FF;
 	wb.b[0] = RadarMessage.cFrameData[3];
 	wb.b[1] = RadarMessage.cFrameData[2];
-	RadarMessageOut.Object_ArelLat = (wb.w >> 4) & 0x1F;
+	RadarMessageOut.Object_ArelLat = (wb.w >> 4) & 0x01FF;
 	RadarMessageOut.Object_Class = RadarMessage.cFrameData[4] & 0x07;
 	wb.b[0] = RadarMessage.cFrameData[5];
 	wb.b[1] = RadarMessage.cFrameData[4];
-	RadarMessageOut.Object_OrientationAngel = (wb.w >> 6) & 0x3F;
+	RadarMessageOut.Object_OrientationAngel = (wb.w >> 6) & 0x03FF;
 	RadarMessageOut.Object_Length = RadarMessage.cFrameData[6];
 	RadarMessageOut.Object_Width = RadarMessage.cFrameData[7];
 }
